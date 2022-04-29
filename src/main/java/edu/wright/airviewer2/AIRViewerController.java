@@ -80,6 +80,9 @@ public class AIRViewerController implements Initializable {
 	
     @FXML
     private MenuItem SplitMenuItem;
+	
+    @FXML
+    private MenuItem AddPagesMenuItem;
 
     private AIRViewerModel model;
 
@@ -160,6 +163,8 @@ public class AIRViewerController implements Initializable {
         
         assert MergePDFMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert SplitMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert AddContentMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+    
 
 
 
@@ -178,6 +183,9 @@ public class AIRViewerController implements Initializable {
             deleteAnnotationMenuItem.setDisable(0 >= model.getSelectionSize());
             
              MergePDFMenuItem.setDisable(false);
+             AddPagesMenuItem.setDisable(false);
+
+		
 
             if (null != currentPageImageView) {
                 int pageIndex = pagination.getCurrentPageIndex();
@@ -230,6 +238,8 @@ public class AIRViewerController implements Initializable {
             
              MergePDFMenuItem.setDisable(true);
 	     SplitMenuItem.setDisable(false);
+	     AddPagesMenuItem.setDisable(true);
+	
 	
 
         }
@@ -251,6 +261,8 @@ public class AIRViewerController implements Initializable {
 	    
         
         assert SplitMenuItem != null : "fx:id=\"SplitMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert AddPagesMenuItem != null : "fx:id=\"AddPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+    
        
 
         model = aModel;
@@ -382,9 +394,62 @@ public class AIRViewerController implements Initializable {
 					}
                 }
             });
-        }
+		
+		 AddPagesMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            	@Override
+              public void handle(ActionEvent e) {
+              	// logic to take input 
+              	
+               	
+              	Dialog<String>  dialog = new Dialog<String>();
+              	dialog.setTitle("Add Pages Dialog Box");
+              	
+              	ButtonType ok = new ButtonType("Ok", ButtonData.OK_DONE);
+              	ButtonType cancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
+                  
+                  //Setting the content of the dialog
+                  dialog.setContentText("Add Pages");
+                
+                  //Adding buttons to the dialog pane
+                  dialog.getDialogPane().getButtonTypes().add(ok);
+                  dialog.getDialogPane().getButtonTypes().add(cancel);
+                  //Setting the label
 
-        refreshUserInterface();
+                 Label numberLabel = new Label("Enter the number of Blank Pages");
+              	
+                 TextField number = new TextField();
+                 
+                 
+                 VBox vBox = new VBox();
+
+                 vBox.setSpacing(8);
+                 vBox.setPadding(new Insets(10,10,10,10));
+                 vBox.getChildren().addAll(
+                    numberLabel, number);
+                 
+                 dialog.getDialogPane().setContent(vBox); 
+              	
+                 dialog.showAndWait();
+                 
+                 System.out.println(number.getText());
+          	   
+                 AddPages addObj = new AddPages(model.getPdfPath(), number.getText());
+                 
+                 try {
+					addObj.AddPages();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+                  
+                  refreshUserInterface();
+              }
+
+            });
+        }
+	    
+
+       refreshUserInterface();
 
         return model;
     }
