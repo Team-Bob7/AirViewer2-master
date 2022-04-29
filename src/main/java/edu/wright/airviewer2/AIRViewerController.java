@@ -74,6 +74,9 @@ public class AIRViewerController implements Initializable {
 
     @FXML
     private MenuItem deleteAnnotationMenuItem;
+    
+    @FXML
+    private MenuItem MergePDFMenuItem;
 
     private AIRViewerModel model;
 
@@ -151,6 +154,9 @@ public class AIRViewerController implements Initializable {
         assert addEllipseAnnotationMenuItem != null : "fx:id=\"addEllipseAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert addTextAnnotationMenuItem != null : "fx:id=\"addTextAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+        
+        assert MergePDFMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+
 
         if (null != model) {
             pagination.setPageCount(model.numPages());
@@ -165,6 +171,8 @@ public class AIRViewerController implements Initializable {
             addEllipseAnnotationMenuItem.setDisable(false);
             addTextAnnotationMenuItem.setDisable(false);
             deleteAnnotationMenuItem.setDisable(0 >= model.getSelectionSize());
+            
+             MergePDFMenuItem.setDisable(false);
 
             if (null != currentPageImageView) {
                 int pageIndex = pagination.getCurrentPageIndex();
@@ -214,6 +222,8 @@ public class AIRViewerController implements Initializable {
             addEllipseAnnotationMenuItem.setDisable(true);
             addTextAnnotationMenuItem.setDisable(true);
             deleteAnnotationMenuItem.setDisable(true);
+            
+             MergePDFMenuItem.setDisable(true);
 
         }
     }
@@ -317,6 +327,27 @@ public class AIRViewerController implements Initializable {
                     model.executeDocumentCommandWithNameAndArgs("DeleteSelectedAnnotation",
                             new String[]{Integer.toString(pageIndex)});
                     refreshUserInterface();
+                }
+            });
+            
+             MergePDFMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                	TextInputDialog dialog = new TextInputDialog("Merge a PDF");
+                	dialog.setTitle("Text Input Dialog");
+                	dialog.setHeaderText("Merge a PDF");
+                	dialog.setContentText("Give the full path of PDF you want to merge:");
+
+                	// Traditional way to get the response value.
+                	Optional<String> result = dialog.showAndWait();
+                	
+                	MergePDFs mergeObj = new MergePDFs(model.getPdfPath(), result.get());
+                	try {
+						mergeObj.merge();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
                 }
             });
         }
