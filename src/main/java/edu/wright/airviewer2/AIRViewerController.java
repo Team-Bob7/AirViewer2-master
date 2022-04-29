@@ -83,6 +83,9 @@ public class AIRViewerController implements Initializable {
 	
     @FXML
     private MenuItem AddPagesMenuItem;
+	
+    @FXML
+    private MenuItem AddingContentMenuItem;
 
     private AIRViewerModel model;
 
@@ -164,6 +167,8 @@ public class AIRViewerController implements Initializable {
         assert MergePDFMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert SplitMenuItem != null : "fx:id=\"SplitMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert AddPagesMenuItem != null : "fx:id=\"AddPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert AddingContentMenuItem != null : "fx:id=\"AddingContentMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+   
     
 
 
@@ -185,6 +190,8 @@ public class AIRViewerController implements Initializable {
              MergePDFMenuItem.setDisable(false);
 	     SplitMenuItem.setDisable(false);
              AddPagesMenuItem.setDisable(false);
+            AddingContentMenuItem.setDisable(false);
+
 
 		
 
@@ -240,6 +247,8 @@ public class AIRViewerController implements Initializable {
              MergePDFMenuItem.setDisable(true);
 	     SplitMenuItem.setDisable(true);
             AddPagesMenuItem.setDisable(true);
+           AddingContentMenuItem.setDisable(true);
+
 	
 	
 
@@ -264,6 +273,8 @@ public class AIRViewerController implements Initializable {
 	assert MergePDFMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert SplitMenuItem != null : "fx:id=\"SplitMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert AddPagesMenuItem != null : "fx:id=\"AddPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert AddingContentMenuItem != null : "fx:id=\"AddingContentMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+
     
        
 
@@ -448,6 +459,23 @@ public class AIRViewerController implements Initializable {
               }
 
             });
+		
+	AddingContentMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                	TextInputDialog dialog = new TextInputDialog("AddingContent to a PDF");
+                	dialog.setTitle("Text Input Dialog");
+                	dialog.setHeaderText("AddingContent to a PDF");
+                	dialog.setContentText("Give the full path of PDF you want to AddingContent:");
+
+                	// Traditional way to get the response value.
+                	Optional<String> result = dialog.showAndWait();
+                	
+                	AddingContent AddingContentObj = new AddingContent(model.getPdfPath(), result.get());
+                	refreshUserInterface();
+                	 
+                }
+            });	
         }
 	    
 
