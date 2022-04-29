@@ -163,7 +163,7 @@ public class AIRViewerController implements Initializable {
         
         assert MergePDFMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert SplitMenuItem != null : "fx:id=\"SplitMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
-	assert AddContentMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert AddPagesMenuItem != null : "fx:id=\"AddPagesMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
     
 
 
