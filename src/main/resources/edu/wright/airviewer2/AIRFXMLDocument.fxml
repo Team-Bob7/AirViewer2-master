@@ -36,6 +36,7 @@
               <MenuItem fx:id="deleteAnnotationMenuItem" mnemonicParsing="false" text="Delete Annotation" />
                
                <MenuItem fx:id="MergePDFsMenuItem" mnemonicParsing="false" text="Merge a PDF" />
+                <MenuItem fx:id="splitMenuItem" mnemonicParsing="false" text="split a PDF" />
                <MenuItem fx:id="AddPagesMenuItem" mnemonicParsing="false" text="AddPages to a PDF" />
 
             </items>
