@@ -77,6 +77,9 @@ public class AIRViewerController implements Initializable {
     
     @FXML
     private MenuItem MergePDFMenuItem;
+	
+    @FXML
+    private MenuItem SplitMenuItem;
 
     private AIRViewerModel model;
 
@@ -156,6 +159,8 @@ public class AIRViewerController implements Initializable {
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         
         assert MergePDFMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert SplitMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+
 
 
         if (null != model) {
@@ -224,6 +229,8 @@ public class AIRViewerController implements Initializable {
             deleteAnnotationMenuItem.setDisable(true);
             
              MergePDFMenuItem.setDisable(true);
+	     SplitMenuItem.setDisable(false);
+	
 
         }
     }
@@ -241,6 +248,10 @@ public class AIRViewerController implements Initializable {
         assert addEllipseAnnotationMenuItem != null : "fx:id=\"addEllipseAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert addTextAnnotationMenuItem != null : "fx:id=\"addTextAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	    
+        
+        assert SplitMenuItem != null : "fx:id=\"SplitMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+       
 
         model = aModel;
 
@@ -344,6 +355,27 @@ public class AIRViewerController implements Initializable {
                 	MergePDFs mergeObj = new MergePDFs(model.getPdfPath(), result.get());
                 	try {
 						mergeObj.merge();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+                }
+            });
+		
+		SplitMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                	TextInputDialog dialog = new TextInputDialog("Split a PDF");
+                	dialog.setTitle("Text Input Dialog");
+                	dialog.setHeaderText("Split a PDF");
+                	dialog.setContentText("Give the full path of PDF you want to Split:");
+
+                	// Traditional way to get the response value.
+                	Optional<String> result = dialog.showAndWait();
+                	
+                	split SplitObj = new split(model.getPdfPath(), result.get());
+                	try {
+						SplitObj.split();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
