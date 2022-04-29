@@ -162,7 +162,7 @@ public class AIRViewerController implements Initializable {
         assert deleteAnnotationMenuItem != null : "fx:id=\"deleteAnnotationMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
         
         assert MergePDFMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
-	assert SplitMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
+	assert SplitMenuItem != null : "fx:id=\"SplitMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
 	assert AddContentMenuItem != null : "fx:id=\"MergePDFMenuItem\" was not injected: check your FXML file 'simple.fxml'.";
     
 
@@ -183,6 +183,7 @@ public class AIRViewerController implements Initializable {
             deleteAnnotationMenuItem.setDisable(0 >= model.getSelectionSize());
             
              MergePDFMenuItem.setDisable(false);
+	     SplitMenuItem.setDisable(false);
              AddPagesMenuItem.setDisable(false);
 
 		
@@ -237,8 +238,8 @@ public class AIRViewerController implements Initializable {
             deleteAnnotationMenuItem.setDisable(true);
             
              MergePDFMenuItem.setDisable(true);
-	     SplitMenuItem.setDisable(false);
-	     AddPagesMenuItem.setDisable(true);
+	     SplitMenuItem.setDisable(true);
+            AddPagesMenuItem.setDisable(true);
 	
 	
 
