@@ -38,6 +38,8 @@
                <MenuItem fx:id="MergePDFsMenuItem" mnemonicParsing="false" text="Merge a PDF" />
                 <MenuItem fx:id="splitMenuItem" mnemonicParsing="false" text="split a PDF" />
                <MenuItem fx:id="AddPagesMenuItem" mnemonicParsing="false" text="AddPages to a PDF" />
+               <MenuItem fx:id="AddingContentMenuItem" mnemonicParsing="false" text="AddingContent to a PDF" />
+
 
             </items>
           </Menu>
