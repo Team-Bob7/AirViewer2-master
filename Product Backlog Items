@@ -1,0 +1,46 @@
+sprint 1:
+
+User stories:
+
+1.	As a developer, I would like to merge the pdfs so that, the user can save similar pdfs in one pdf.
+2.	As a developer, I would like to split the pdf so that, the user can easily check the individual chapters.
+
+Tasks:
+
+1. Define a class with a functionality to merge the PDFs.
+2. Testing the functionality of merging the PDFs and provide the code coverage.
+3. Adding a button to UI which allows user to merge PDFs.
+
+1. Define a class with a functionality to split the PDFs.
+2. Testing the functionality of split the PDFs and provide the code coverage.
+3. Adding a button to UI which allows user to split the PDFs.
+
+
+Code Coverage:
+
+1.We have uploded the code for the merging the pdfs,it helps the user to save pdfs in one pdf.
+
+
+Sprint 2:
+
+User Stories:
+
+1.	As a developer, I would like to Add Content in the pdf so that, the user can include the Data easily in the pdf at any time.
+2.	As a developer, I would like to Add pages in the pdf so that, it will provide blank pages to the pdf.
+
+Tasks:
+
+1. Define a class with a functionality to Add content in PDFs.
+2. Testing the functionality of Add content to the PDFs and provide the code coverage.
+3. Adding a button to UI which allows user to Add content to the PDFs.
+
+1. Define a class with a functionality to AddPages in PDFs.
+2. Testing the functionality of AddPages PDFs and provide the code coverage.
+3. Adding a button to UI which allows user to AddPages PDFs.
+
+Code Coverage:
+
+1.We have uploded code for split the pdf which helps the users to check the individual chapters.
+2.We have uploded code for adding content in the pdf so that user can add the data in pdf at any time.
+3.We have uploded code for adding pages to the pdf,it provides the blank pages to pdf.
+
