@@ -1,0 +1,179 @@
+                                                             Program by contract
+
+1.Addpages	
+
+@Invariant("numberOfPages != null && numberOfPages.length() > 0")
+public class AddPages {
+	
+	int numberOfPages;
+	String filePath;
+	
+@Requires("numberOfPages != null && numberOfPages.length() > 0")
+	public AddPages(String filePath, int numberOfPages) {
+		this.filePath = filePath;
+		this.numberOfPages = numberOfPages;
+		
+	}
+
+@Requires("NumberOfPages >= 1.0")
+@Ensures("result == true")
+
+/**
+*@Invariant("numberOfPages != null && numberOfPages.length() > 0")
+* In this method, the object numberofpages must be integer and not equal to zero.
+*The object number will show how many pages is going to add in a PDF.
+*Through the filepath, the method can retrieve the PDF and add the blank pages to it.
+
+@Requires
+ * This constructor initialize the object filepath and numberofpages in the AddPages class(). 
+ * @pre ("numberOfPages != null && numberOfPages.length() > 0")
+ * @param path
+ * @param number
+
+*@Ensures
+* This method addPages() create the blank page and then adds number of blank pages
+   at the end of the PDF
+ * Finally, this method will save and close the PDF.
+* @pre ("NumberOfPages >= 1.0")
+ * @post ("result == true")
+ * @return
+ * @throws IOException
+
+ */
+
+
+2.AddingContent
+
+@Invariant("filepath.content() > 0 && filepath != null")  
+
+ class AddingContent {
+	
+	String content;
+	String filepath;
+	
+
+
+@Requires("filepath.content() > 0 && filepath != null") 
+public AddingContent(String path, String content) {
+	this.filepath = filepath;
+	this.content = content;
+}
+
+
+@Ensures("result == true")
+
+/**
+
+*@invariant ("filepath.content() > 0 && filepath != null")
+* In this method, content is the object and it should not be empty.
+*Not only numbers but also words can be added in the content.
+*Through the filepath the method can insert the content at any place in the PDF.
+
+@Requires
+ * This constructor initialize the objects of filepath and content in the AddinContent class(). 
+ * @pre ("filepath.content() > 0 && filepath != null")
+ * @param path
+ * @param number
+
+*@Ensures
+* This method split() Load the document and retrieve the pages then set the position of the 
+  line in which content is added.
+ * Finally, this method will close the stream and save the PDF.
+ * @pre ("content >= 1.0")
+ * @post ("result == true")
+ * @return
+ * @throws IOException
+
+ */
+
+3.MergePDFs
+
+@Invariant("file2Path.length() > 0 && file2Path != null")
+ class MergePDFs {
+  
+	String file1Path;
+	String file2Path;
+
+	
+	
+@Requires("file2Path.length() > 0 && file2Path != null")
+public MergePDFs(String file1Path, String file2Path) {
+		super();
+		this.file1Path = file1Path;
+		this.file2Path = file2Path;
+	}
+
+
+@Requires("file2Path.length() > 0 && file2Path != null")
+@Ensures("result == true")
+
+/**
+
+* @invariant ("file2Path.length() > 0 && file2Path != null")
+* This class takes file1Path and file2Path through constructor to merge the PDFs.
+ * Two PDFs can be merged in to one new PDF.
+ 
+@Requires
+ * This constructor initialize the objects of file1path and file2path in the MergePDF class(). 
+* @pre ("file2Path.length() > 0 && file2Path != null")
+* @param file1Path
+* @param file2Path
+	
+
+*@Ensures
+* This method is merging two PDFs into one PDF.
+ * selecting two different PDFs through destination path and creating a new PDF. 
+ * @pre ("file2Path.length() > 0 && file2Path != null")
+ * @post ("result == true")
+ * @return
+ * @throws IOException
+
+ */
+
+
+
+4.split
+
+@Invariant("numberOfPages != null && numberOfPages.length() > 1")  
+	
+	 class split {
+		
+		String filepath;
+		String numberOfPages;
+
+
+		 
+    @Requires("numberOfPages != null && numberOfPages.length() > 1") 
+	public split(String filepath, String numberOfPages) {
+		this.filepath = filepath;
+		this.numberOfPages = numberOfPages;
+    }
+    public split(String string) {
+			// TODO Auto-generated constructor stub
+		}
+	  
+    @Requires("file.pages() > 0 && file != null") 
+	@Ensures("result == true")
+
+
+/**
+*@invariant ("numberOfPages != null && numberOfPages.length() > 1")    
+* In this method the object, numberofpages must be greater than 1 and integer.
+*The object filepath will show the path of the file to split the PDF into new PDFs.
+
+ *@Requires
+* This constructor initialize the objects like filepath and numberofpages in the split class(). 
+ * @param numberOfPages 
+ * @pre ("numberOfPages != null && numberOfPages.length() > 1")
+* @param filepath
+ * @param number
+
+*@Ensures
+ * This method split() will create the new PDFs according to the number 
+     of pages are in the give  filepath of the PDF.
+     * Finally, this method save each page as an individual PDF.
+     * @pre ("NumberOfPages >= 2.0")
+     * @post ("result == true")
+     * @return
+     * @throws IOException
+     */      
