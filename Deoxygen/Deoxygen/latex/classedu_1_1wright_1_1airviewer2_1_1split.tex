@@ -1,0 +1,75 @@
+\hypertarget{classedu_1_1wright_1_1airviewer2_1_1split}{}\doxysection{edu.\+wright.\+airviewer2.\+split Class Reference}
+\label{classedu_1_1wright_1_1airviewer2_1_1split}\index{edu.wright.airviewer2.split@{edu.wright.airviewer2.split}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classedu_1_1wright_1_1airviewer2_1_1split_ab52f29737a03fb94b56f21871c2b4866}{split}} (String filepath, String number\+Of\+Pages)
+\item 
+\mbox{\hyperlink{classedu_1_1wright_1_1airviewer2_1_1split_a9c7e453b7c437f36d0eb672acb97d721}{split}} (String string)
+\item 
+boolean \mbox{\hyperlink{classedu_1_1wright_1_1airviewer2_1_1split_a5f8bd14b1b3b8e1aae137fa66d7be309}{split}} ()  throws IOException 
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+In this method the object, numberofpages must be greater than 1 and integer. The object filepath will show the path of the file to split the PDF into new PDFs. \begin{DoxyInvariant}{Invariant}
+(\char`\"{}number\+Of\+Pages != null \&\& number\+Of\+Pages.\+length() $>$ 1\char`\"{}) 
+\end{DoxyInvariant}
+\begin{DoxyAuthor}{Author}
+sneha rao 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classedu_1_1wright_1_1airviewer2_1_1split_ab52f29737a03fb94b56f21871c2b4866}\label{classedu_1_1wright_1_1airviewer2_1_1split_ab52f29737a03fb94b56f21871c2b4866}} 
+\index{edu.wright.airviewer2.split@{edu.wright.airviewer2.split}!split@{split}}
+\index{split@{split}!edu.wright.airviewer2.split@{edu.wright.airviewer2.split}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily edu.\+wright.\+airviewer2.\+split.\+split (\begin{DoxyParamCaption}\item[{String}]{filepath,  }\item[{String}]{number\+Of\+Pages }\end{DoxyParamCaption})}
+
+This constructor initialize the objects like filepath and numberofpages in the split class(). 
+\begin{DoxyParams}{Parameters}
+{\em number\+Of\+Pages} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+(\char`\"{}number\+Of\+Pages != null \&\& number\+Of\+Pages.\+length() $>$ 1\char`\"{}) 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & \\
+\hline
+{\em number} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classedu_1_1wright_1_1airviewer2_1_1split_a9c7e453b7c437f36d0eb672acb97d721}\label{classedu_1_1wright_1_1airviewer2_1_1split_a9c7e453b7c437f36d0eb672acb97d721}} 
+\index{edu.wright.airviewer2.split@{edu.wright.airviewer2.split}!split@{split}}
+\index{split@{split}!edu.wright.airviewer2.split@{edu.wright.airviewer2.split}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily edu.\+wright.\+airviewer2.\+split.\+split (\begin{DoxyParamCaption}\item[{String}]{string }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classedu_1_1wright_1_1airviewer2_1_1split_a5f8bd14b1b3b8e1aae137fa66d7be309}\label{classedu_1_1wright_1_1airviewer2_1_1split_a5f8bd14b1b3b8e1aae137fa66d7be309}} 
+\index{edu.wright.airviewer2.split@{edu.wright.airviewer2.split}!split@{split}}
+\index{split@{split}!edu.wright.airviewer2.split@{edu.wright.airviewer2.split}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily boolean edu.\+wright.\+airviewer2.\+split.\+split (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) throws IOException}
+
+This method \mbox{\hyperlink{classedu_1_1wright_1_1airviewer2_1_1split_a5f8bd14b1b3b8e1aae137fa66d7be309}{split()}} will create the new PDFs according to the number of pages are in the give filepath of the PDF. Finally, this method save each page as an individual PDF. \begin{DoxyPrecond}{Precondition}
+(\char`\"{}\+Number\+Of\+Pages $>$= 2.\+0\char`\"{}) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+(\char`\"{}result == true\char`\"{}) 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{split_8java}{split.\+java}}\end{DoxyCompactItemize}
