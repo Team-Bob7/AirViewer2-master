@@ -1,0 +1,50 @@
+Software Design Document:
+
+1 Introduction
+The Software Design Document is a document to provide documentation which will be used to aid in
+software development by providing the details for how the software should be built. Within the Software
+Design Document are narrative and graphical documentation of the software design for the project
+including use case models, sequence diagrams, collaboration models, object behavior models, and
+other supporting requirement information.
+
+We have done user stories for the pdf like merging,spliting,adding content and adding pages to the pdf.
+we have run couple of sprints.
+
+1.1 Purpose
+
+Merge the pdfs, it will merge similar pdfs in one pdf.
+Spliting the pdf, it can easily check the individual chapters.
+Adding Content to the pdf,it can include the Data in the pdf.
+Adding pages in the pdf,it provide new pages to the pdf.
+
+The purpose of the Software Design Document is to provide a description of the design of a system
+fully enough to allow for software development to proceed with an understanding of what is to be
+built and how it is expected to built. The Software Design Document provides information
+necessary to provide description of the details for the software and system to be built.
+
+
+1.2 Scope
+
+In merging pdfs,helps the user can save similar pdfs in one pdf.
+In spliting the pdf,helps the user can easily check the individual chapters.
+In Adding Content to the pdf,helps the user can include the Data easily in the pdf at any time.
+In Adding pages in the pdf, helps the user to provide blank pages to the pdf.
+
+This Software Design Document is for a base level system which will work as a proof of concept for
+the use of building a system the provides a base level of functionality to show feasibility for large
+scale production use. This Software Design is focused on the base level system and critical parts
+of the system. For this particular Software Design Document, the focus is placed on generation of
+the documents and modification of the documents. The system will be used in conjunction with
+other pre-existing systems and will consist largely of a document interaction facade that abstracts
+document interactions and handling of the document objects. 
+
+Helps the user for easily access of pdf.
+
+Testing:
+
+We have used JUnit testing.
+
+Summary:
+
+The only moto is to help the user and developed code according to the user requirement so that they can easily access the pdfs.
+
